@@ -7,14 +7,14 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   withIcon?: boolean;
   variant?: "purple" | "line-dark";
   margin?: string;
-  padding?: "0" | "3" | "4";
+  padding?: "small" | "normal" | "large";
 }
 function Button({
   children,
   withIcon = false,
   variant = "purple",
   margin = "0",
-  padding = "0",
+  padding = "small",
 }: ButtonProps) {
   return (
     <button
@@ -26,8 +26,9 @@ function Button({
         "mt-8": margin === "8",
         "justify-center": withIcon,
         flex: withIcon,
-        "p-3": padding == "3",
-        "p-4": padding == "4",
+        "p-2": padding == "small",
+        "p-3": padding == "normal",
+        "p-4": padding == "large",
       })}
     >
       {children}
