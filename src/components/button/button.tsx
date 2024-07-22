@@ -8,7 +8,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   variant?: "purple" | "line-dark";
   margin?: string;
   buttontype?: "submit" | "button" | "reset";
-  padding?: "small" | "normal" | "large";
+  padding?: "none" | "small" | "normal" | "large";
+  paddingpx?: "none" | "small" | "normal" | "large";
   required?: "true" | "false";
 }
 function Button({
@@ -17,7 +18,8 @@ function Button({
   withIcon = false,
   variant = "purple",
   margin = "0",
-  padding = "small",
+  paddingpx = "none",
+  padding = "none",
   buttontype,
 }: ButtonProps) {
   return (
@@ -31,9 +33,14 @@ function Button({
         "mt-8": margin === "8",
         "justify-center": withIcon,
         flex: withIcon,
-        "p-2": padding == "small",
+        "p-0": padding == "none",
+        "p-1": padding == "small",
         "p-3": padding == "normal",
         "p-4": padding == "large",
+        "px-0": paddingpx == "none",
+        "px-2": paddingpx == "small",
+        "px-3": paddingpx == "normal",
+        "px-6": paddingpx == "large",
         //  none: buttontype == "normal",
         // sumbit: buttontype == "sumbit",
         // reset: buttontype == "reset",
