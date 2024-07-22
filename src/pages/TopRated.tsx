@@ -67,6 +67,7 @@ const TopRated = ({}) => {
             <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
               <img src={moon} />
               Dark Mode
+              <input type="checkbox" />
             </li>
             <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
               <img src={setting} />
