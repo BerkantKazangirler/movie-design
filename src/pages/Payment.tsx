@@ -142,7 +142,7 @@ const Payment = ({}) => {
                   You will be charged $5 every yearly thereafter while the
                   subscription is active. Cancel any time.
                 </p>
-                <Button padding="normal" margin="8" buttontype="submit">
+                <Button size="large" buttontype="submit">
                   Pay
                 </Button>
               </div>

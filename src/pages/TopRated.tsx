@@ -15,10 +15,10 @@ import "../App.css";
 const TopRated = ({}) => {
   return (
     <>
-      <div className="flex bg-payment-bg w-full h-screen overflow-y-hidden flex-col">
+      <div className="flex bg-dark-background w-full h-screen overflow-y-hidden flex-col">
         <header className="bg-dark-background justify-between px-16 h-fit w-full p-4 flex flex-row gap-40">
           <div className="flex flex-row gap-60">
-            <span className="text-xl font-bold">CineMax</span>
+            <span className="text-xl font-bold m-auto">CineMax</span>
             <ul className="flex flex-row gap-5 m-auto">
               <li>Movies</li>
               <li>Series</li>
@@ -28,10 +28,10 @@ const TopRated = ({}) => {
           </div>
           <div className="flex flex-row gap-10">
             <img src={search} className="h-6 mr-20 m-auto" />
-            <Button paddingpx="large" padding="small" buttontype="submit">
+            <Button size="normal" buttontype="submit">
               Payment
             </Button>
-            <img src={notification} />
+            <img src={notification} className="h-8" />
             <div className="flex flex-row gap-2">
               <img src={userimage} />
               <img src={arrow} className="h-2 m-auto" />

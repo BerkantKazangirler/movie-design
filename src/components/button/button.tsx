@@ -6,45 +6,47 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   withIcon?: boolean;
   variant?: "purple" | "line-dark";
-  margin?: string;
   buttontype?: "submit" | "button" | "reset";
-  padding?: "none" | "small" | "normal" | "large";
-  paddingpx?: "none" | "small" | "normal" | "large";
-  required?: "true" | "false";
+  size: "large" | "normal" | "small";
 }
 function Button({
   children,
-  required,
   withIcon = false,
   variant = "purple",
-  margin = "0",
-  paddingpx = "none",
-  padding = "none",
   buttontype,
+  size,
 }: ButtonProps) {
   return (
     <button
       type={buttontype}
-      className={classname("rounded-2xl", {
+      className={classname({
         //   "bg-main-primary": variant === "purple",
         // Eğer varitant'ı purple ise bg-main-primary'ı yap
         "bg-main-primary": variant === "purple",
         "bg-line-dark": variant === "line-dark",
-        "mt-8": margin === "8",
         "justify-center": withIcon,
         flex: withIcon,
-        "p-0": padding == "none",
-        "p-1": padding == "small",
-        "p-3": padding == "normal",
-        "p-4": padding == "large",
-        "px-0": paddingpx == "none",
-        "px-2": paddingpx == "small",
-        "px-3": paddingpx == "normal",
-        "px-6": paddingpx == "large",
-        //  none: buttontype == "normal",
-        // sumbit: buttontype == "sumbit",
-        // reset: buttontype == "reset",
-        "required:": required == "true",
+
+        "pt-[4px]": size == "small",
+        "pr-[16px]": size == "small",
+        "pb-[4px]": size == "small",
+        "pl-[16px]": size == "small",
+        "rounded-2xl": size == "small",
+        "text-xs": size == "small",
+
+        "pt-[8px]": size == "normal",
+        "pr-[24px]": size == "normal",
+        "pb-[8px]": size == "normal",
+        "pl-[24px]": size == "normal",
+        "rounded-[20px]": size == "normal",
+        "text-base": size == "normal",
+
+        "pt-[16px]": size == "large",
+        "pr-[32px]": size == "large",
+        "pb-[16px]": size == "large",
+        "pl-[32px]": size == "large",
+        "rounded-3xl": size == "large",
+        "text-lg": size == "large",
       })}
     >
       {children}
