@@ -45,31 +45,51 @@ const Login = ({}) => {
               </span>
               <hr className="w-full h-1 border-line-dark relative mt-2" />
             </div>
-            <div className="flex flex-col pt-8">
-              <label htmlFor="name" className="text-grayscale-70 text-start">
-                Full Name
-              </label>
-              <Input placeholder="Enter Your Name" rounded="2xl" />
-              <label
-                htmlFor="pass"
-                className="text-grayscale-70 text-start pt-5"
-              >
-                Password
-              </label>
-              <Input placeholder="Enter Your Password" rounded="2xl" />
-              <a href="#" className="text-end text-main-primary pt-3">
-                Forgot Password
-              </a>
-              <Button padding="large" margin="8">
-                Login
-              </Button>
-              <span className="mt-3 text-grayscale-60">
-                Don't have an account?
-                <a href="#" className="text-main-primary ml-1">
-                  Register
+            <form
+              action=""
+              onSubmit={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+              }}
+            >
+              <div className="flex flex-col pt-8">
+                <label htmlFor="name" className="text-grayscale-70 text-start">
+                  Full Name
+                </label>
+                <Input
+                  placeholder="Enter Your Name"
+                  rounded="2xl"
+                  maxlength={32}
+                  minlength={5}
+                  id="name"
+                />
+                <label
+                  htmlFor="pass"
+                  className="text-grayscale-70 text-start pt-5"
+                >
+                  Password
+                </label>
+                <Input
+                  id="pass"
+                  placeholder="Enter Your Password"
+                  rounded="2xl"
+                  minlength={5}
+                  type="password"
+                />
+                <a href="#" className="text-end text-main-primary pt-3">
+                  Forgot Password
                 </a>
-              </span>
-            </div>
+                <Button padding="large" margin="8">
+                  Login
+                </Button>
+                <span className="mt-3 text-grayscale-60">
+                  Don't have an account?
+                  <a href="#" className="text-main-primary ml-1">
+                    Register
+                  </a>
+                </span>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -7,17 +7,22 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   withIcon?: boolean;
   variant?: "purple" | "line-dark";
   margin?: string;
+  buttontype?: "submit" | "button" | "reset";
   padding?: "small" | "normal" | "large";
+  required?: "true" | "false";
 }
 function Button({
   children,
+  required,
   withIcon = false,
   variant = "purple",
   margin = "0",
   padding = "small",
+  buttontype,
 }: ButtonProps) {
   return (
     <button
+      type={buttontype}
       className={classname("rounded-2xl", {
         //   "bg-main-primary": variant === "purple",
         // Eğer varitant'ı purple ise bg-main-primary'ı yap
@@ -29,6 +34,10 @@ function Button({
         "p-2": padding == "small",
         "p-3": padding == "normal",
         "p-4": padding == "large",
+        //  none: buttontype == "normal",
+        // sumbit: buttontype == "sumbit",
+        // reset: buttontype == "reset",
+        "required:": required == "true",
       })}
     >
       {children}
