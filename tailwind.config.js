@@ -13,6 +13,7 @@ export default {
         '256': '56rem',
       },
       colors: {
+        'payment-bg' : '#1E1E1E',
         'main-primary':'#b43feb',
         'light-background':'#0d0c0f',
         'dark-background': '#0d0c0f',
