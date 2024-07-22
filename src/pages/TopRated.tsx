@@ -1,15 +1,15 @@
 import { Button } from "../components";
-import search from "../assets/Search.png";
-import userimage from "../assets/user-image.png";
-import arrow from "../assets/arrow.png";
-import discover from "../assets/discover.png";
-import star from "../assets/star.png";
-import clock from "../assets/clock.png";
-import timer from "../assets/timer.png";
-import file from "../assets/document-download.png";
-import moon from "../assets/moon.png";
-import setting from "../assets/setting-2.png";
-import notification from "../assets/Notification.png";
+import search from "../../public/assets/Search.png";
+import userimage from "../../public/assets/user-image.png";
+import arrow from "../../public/assets/arrow.png";
+import discover from "../../public/assets/discover.png";
+import star from "../../public/assets/star.png";
+import clock from "../../public/assets/clock.png";
+import timer from "../../public/assets/timer.png";
+import file from "../../public/assets/document-download.png";
+import moon from "../../public/assets/moon.png";
+import setting from "../../public/assets/setting-2.png";
+import notification from "../../public/assets/Notification.png";
 import "../App.css";
 
 const TopRated = ({}) => {
@@ -28,7 +28,7 @@ const TopRated = ({}) => {
           </div>
           <div className="flex flex-row gap-10">
             <img src={search} className="h-6 mr-20 m-auto" />
-            <Button size="normal" buttontype="submit">
+            <Button size="normal" type="submit">
               Payment
             </Button>
             <img src={notification} className="h-8" />

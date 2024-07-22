@@ -6,19 +6,19 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   withIcon?: boolean;
   variant?: "purple" | "line-dark";
-  buttontype?: "submit" | "button" | "reset";
+  type?: "submit" | "button" | "reset";
   size: "large" | "normal" | "small";
 }
 function Button({
   children,
   withIcon = false,
   variant = "purple",
-  buttontype,
+  type,
   size,
 }: ButtonProps) {
   return (
     <button
-      type={buttontype}
+      type={type}
       className={classname({
         //   "bg-main-primary": variant === "purple",
         // Eğer varitant'ı purple ise bg-main-primary'ı yap

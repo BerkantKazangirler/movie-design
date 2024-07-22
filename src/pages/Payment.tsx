@@ -1,5 +1,5 @@
-import paypal from "../assets/paypal.png";
-import applepay from "../assets/applepay.png";
+import paypal from "../../public/assets/paypal.png";
+import applepay from "../../public/assets/applepay.png";
 import { Button, Input } from "../components";
 import "../App.css";
 
@@ -142,7 +142,7 @@ const Payment = ({}) => {
                   You will be charged $5 every yearly thereafter while the
                   subscription is active. Cancel any time.
                 </p>
-                <Button size="large" buttontype="submit">
+                <Button size="large" type="submit">
                   Pay
                 </Button>
               </div>

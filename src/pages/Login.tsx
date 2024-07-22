@@ -1,6 +1,6 @@
-import googleLogo from "../assets/google.png";
-import facebookLogo from "../assets/facebook.png";
-import mac from "../assets/mac.png";
+import googleLogo from "../../public/assets/google.png";
+import facebookLogo from "../../public/assets/facebook.png";
+import mac from "../../public/assets/mac.png";
 import { Button, Input } from "../components";
 import "../App.css";
 
