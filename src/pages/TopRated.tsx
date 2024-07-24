@@ -1,17 +1,5 @@
 import { Button } from "../components";
 import { Home } from "../components/home";
-import search from "../../public/assets/Search.png";
-import userimage from "../../public/assets/user-image.png";
-import arrow from "../../public/assets/arrow.png";
-import discover from "../../public/assets/discover.png";
-import star from "../../public/assets/star.png";
-import clock from "../../public/assets/clock.png";
-import timer from "../../public/assets/timer.png";
-import file from "../../public/assets/document-download.png";
-import moon from "../../public/assets/moon.png";
-import setting from "../../public/assets/setting-2.png";
-import notification from "../../public/assets/Notification.png";
-import "../App.css";
 
 import { useState, useEffect } from "react";
 
@@ -69,14 +57,14 @@ const TopRated = () => {
             </ul>
           </div>
           <div className="flex flex-row gap-10">
-            <img src={search} className="h-6 mr-20 m-auto" />
+            <img src={"./assets/Search.png"} className="h-6 mr-20 m-auto" />
             <Button size="normal" buttonstyle="primary" type="submit">
               Payment
             </Button>
-            <img src={notification} className="h-8" />
+            <img src={"./assets/Notification.png"} className="h-8" />
             <div className="flex flex-row gap-2">
-              <img src={userimage} />
-              <img src={arrow} className="h-2 m-auto" />
+              <img src={"./assets/user-image.png"} />
+              <img src={"./assets/arrow.png"} className="h-2 m-auto" />
             </div>
           </div>
         </header>
@@ -85,15 +73,15 @@ const TopRated = () => {
             <ul className="flex gap-5 flex-col font-bold w-75">
               <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
               <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
-                <img src={discover} />
+                <img src={"./assets/discover.png"} />
                 Discovery
               </li>
               <li className="border-l-4 gap-3 flex flex-row border-main-primary pl-9">
-                <img src={star} />
+                <img src={"./assets/star.png"} />
                 Top Rated
               </li>
               <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-                <img src={timer} />
+                <img src={"./assets/timer.png"} />
                 Coming Soon
               </li>
             </ul>
@@ -102,20 +90,20 @@ const TopRated = () => {
                 library
               </li>
               <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
-                <img src={clock} />
+                <img src={"./assets/clock.png"} />
                 Recent Played
               </li>
               <li className="gap-3 flex flex-row text-grayscale-70 pl-10">
-                <img src={file} />
+                <img src={"./assets/document-download.png"} />
                 Download
               </li>
               <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-                <img src={moon} />
+                <img src={"./assets/moon.png"} />
                 Dark Mode
                 <input type="checkbox" />
               </li>
               <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-                <img src={setting} />
+                <img src={"./assets/setting-2.png"} />
                 Setting
               </li>
             </ul>

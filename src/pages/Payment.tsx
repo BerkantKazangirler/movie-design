@@ -1,5 +1,3 @@
-import paypal from "../../public/assets/paypal.png";
-import applepay from "../../public/assets/applepay.png";
 import { Button, Input } from "../components";
 import "../App.css";
 
@@ -28,7 +26,7 @@ const Payment = ({}) => {
                     id="paypal"
                     className="w-4 accent-main-primary"
                   />
-                  <img src={paypal} className="h-6 ml-3" />
+                  <img src={"./assets/paypal.png"} className="h-6 ml-3" />
                   <span className="font-bold italic ml-2">Paypal</span>
                 </label>
                 <label className="flex-row flex w-full border p-3 p rounded-3xl border-main-primary">
@@ -38,7 +36,7 @@ const Payment = ({}) => {
                     id="applepay"
                     className="w-4 accent-main-primary"
                   />
-                  <img src={applepay} className="h-6 ml-3" />
+                  <img src={"./assets/applepay.png"} className="h-6 ml-3" />
                 </label>
                 <span className="text-grayscale-70 text-sm">
                   Or checkout using a credit card

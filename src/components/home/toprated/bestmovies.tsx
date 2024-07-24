@@ -1,6 +1,3 @@
-import category from "../../../../public/assets/category.png";
-import star from "../../../../public/assets/start2.png";
-
 export interface MovieTypes {
   big_image: string;
   description: string;
@@ -36,14 +33,14 @@ const Films = ({ rank, big_image, rating, year, title, genre }: MovieTypes) => {
               {title}
             </span>
             <span className="flex text-sm max-w-fit text-grayscale-70">
-              <img src={category} className="h-4 m-auto" />
+              <img src={"./assets/category.png"} className="h-4 m-auto" />
               {genre.slice(0, 2).map((genre, i) => {
                 if (i === genre.slice(0, 2).length - 1) return genre;
                 return genre + " • ";
               })}
             </span>
             <span className="flex text-sm">
-              <img src={star} className="h-5" />
+              <img src={"./assets/start2.png"} className="h-5" />
               {rating}
             </span>
           </div>

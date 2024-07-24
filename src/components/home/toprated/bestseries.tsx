@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import star from "../../../../public/assets/start2.png";
-
 export interface MovieTypes {
   big_image: string;
   description: string;
@@ -36,7 +33,7 @@ const Series = ({
               {title}
             </span>
             <span className="flex text-sm gap-1 w-60">
-              <img src={star} className="h-5" />
+              <img src={"./assets/start2.png"} className="h-5" />
               {rating}
               <span className="text-grayscale-70">
                 <span className="text-grayscale-70">
@@ -61,7 +58,7 @@ const Series = ({
               {title}
             </span>
             <span className="flex text-sm gap-1 w-60">
-              <img src={star} className="h-5" />
+              <img src={"./assets/start2.png"} className="h-5" />
               {rating}
               <span className="text-grayscale-70">
                 {genre.map((genre) => genre + " • ")}

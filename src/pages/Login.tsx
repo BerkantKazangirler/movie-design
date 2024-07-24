@@ -1,6 +1,3 @@
-import googleLogo from "../../public/assets/google.png";
-import facebookLogo from "../../public/assets/facebook.png";
-import mac from "../../public/assets/mac.png";
 import { Button, Input } from "../components";
 import "../App.css";
 
@@ -19,7 +16,7 @@ const Login = ({}) => {
                 justo, laoreet id sem semper parturient.
               </p>
             </div>
-            <img src={mac} className="w-full" />
+            <img src={"./assets/mac.png"} className="w-full" />
           </div>
         </div>
         <div className="w-1/2 text-center p-5 px-24 bg-dark-background">
@@ -35,7 +32,10 @@ const Login = ({}) => {
                 buttonstyle="secondary"
                 size="large"
               >
-                <img src={googleLogo} className="w-6 relative mr-3" />
+                <img
+                  src={"./assets/google.png"}
+                  className="w-6 relative mr-3"
+                />
                 Login with Google
               </Button>
               <Button
@@ -44,7 +44,10 @@ const Login = ({}) => {
                 buttonstyle="secondary"
                 size="large"
               >
-                <img src={facebookLogo} className="w-3 relative mr-3" />
+                <img
+                  src={"./assets/facebook.png"}
+                  className="w-3 relative mr-3"
+                />
                 Login with Facebook
               </Button>
             </div>
