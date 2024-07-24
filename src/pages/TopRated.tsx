@@ -128,7 +128,7 @@ const TopRated = () => {
           <span className="text-2xl font-semibold pt-5">Best Of Series</span>
           <div className="flex flex-row gap-10">
             {apiseries &&
-              limitData.map((apiseries) => (
+              limitedMovieData.map((apiseries) => (
                 <Series
                   rank={apiseries.rank}
                   big_image={apiseries.big_image}
@@ -141,7 +141,6 @@ const TopRated = () => {
                   rating={apiseries.rating}
                   thumbnail={apiseries.thumbnail}
                   title={apiseries.title}
-                  year={apiseries.year}
                 />
               ))}
           </div>

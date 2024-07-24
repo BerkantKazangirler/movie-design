@@ -6,20 +6,12 @@ export interface MovieTypes {
   image: string;
   imbd_link: string;
   imbid: string;
-  rank: number;
-  rating: string;
+  rating: number;
   thumbnail: string;
   title: string;
-  year: number;
+  rank: number;
 }
-const Series = ({
-  rank,
-  big_image,
-  rating,
-  year,
-  title,
-  genre,
-}: MovieTypes) => {
+const Series = ({ big_image, rating, title, genre }: MovieTypes) => {
   return (
     <div className="flex gap-14 flex-col">
       <div className="flex flex-row h-56 pt-5 gap-5">
