@@ -27,7 +27,7 @@ const Movies = ({
             className="ml-4 rounded-2xl h-32 w-28 object-cover object-center"
           />
           <div className="flex flex-col ml-5 gap-3">
-            <span className="border border-line-dark rounded-xl px-3 py-2 text-[12px] max-w-fit">
+            <span className="border border-line-dark rounded-xl px-3 py-1 text-[12px] max-w-fit">
               {year}
             </span>
             <span className="w-36 text-ellipsis whitespace-nowrap overflow-hidden font-semibold">

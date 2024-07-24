@@ -26,7 +26,7 @@ const Series = ({ big_image, rating, title, genre }: MovieTypes) => {
                 <span className="text-grayscale-70">
                   {genre.slice(0, 2).map((genre, i) => {
                     if (i === genre.slice(0, 2).length - 1) return genre;
-                    return genre + " • ";
+                    return "| " + genre + " • ";
                   })}
                 </span>
               </span>
@@ -48,7 +48,10 @@ const Series = ({ big_image, rating, title, genre }: MovieTypes) => {
               <img src={"./assets/start2.png"} className="h-5" />
               {rating}
               <span className="text-grayscale-70">
-                {genre.map((genre) => genre + " • ")}
+                {genre.slice(0, 2).map((genre, i) => {
+                  if (i === genre.slice(0, 2).length - 1) return genre;
+                  return "| " + genre + " • ";
+                })}
               </span>
             </span>
           </div>
