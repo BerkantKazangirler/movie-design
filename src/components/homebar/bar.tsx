@@ -1,4 +1,3 @@
-import React from "react";
 import classname from "classnames";
 //classnames bir kütüphane
 interface BarProps {

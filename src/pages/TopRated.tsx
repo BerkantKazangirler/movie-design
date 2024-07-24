@@ -45,7 +45,7 @@ const TopRated = () => {
     <div className="flex bg-dark-background w-full h-screen overflow-y-hidden flex-col">
       <header className="bg-dark-background justify-between px-16 h-fit w-full p-4 flex flex-row gap-40">
         <div className="flex flex-row gap-60">
-          <span className="text-xl font-bold m-auto">CineMax</span>
+          <span className="text-xl font-semibold ml-8 m-auto">CineMax</span>
           <ul className="flex flex-row gap-5 m-auto">
             <li>Movies</li>
             <li>Series</li>
