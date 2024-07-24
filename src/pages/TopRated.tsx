@@ -25,8 +25,7 @@ const TopRated = () => {
   const [apiseries, setApiSeries] = useState<MovieTypes[] | undefined>();
 
   const limitData = movie100.slice(0, 5);
-  const limitedMovieData = series100.slice(0, 6);
-  const limitedMovieDataa = series100.slice(6, 12);
+  const limitedMovieData = series100.slice(0, 12);
   useEffect(() => {
     async function getJson() {
       const response: MovieTypes[] = await fetch(
@@ -129,19 +128,60 @@ const TopRated = () => {
           <div className="flex flex-row gap-10">
             {apiseries &&
               limitedMovieData.map((apiseries) => (
-                <Series
-                  rank={apiseries.rank}
-                  big_image={apiseries.big_image}
-                  description={apiseries.description}
-                  genre={apiseries.genre}
-                  id={apiseries.id}
-                  image={apiseries.image}
-                  imbd_link={apiseries.imdb_link}
-                  imbid={apiseries.imdbid}
-                  rating={apiseries.rating}
-                  thumbnail={apiseries.thumbnail}
-                  title={apiseries.title}
-                />
+                <div className="flex gap-14 flex-col">
+                  <div className="flex flex-row h-56 pt-5 gap-5">
+                    <div className="flex flex-col">
+                      <img
+                        src={apiseries.big_image}
+                        className="w-64 h-44 object-cover object-center rounded-2xl"
+                      />
+                      <div className="flex flex-col gap-3">
+                        <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-bold">
+                          {apiseries.title}
+                        </span>
+                        <span className="flex text-sm gap-1 w-60">
+                          <img src={"./assets/start2.png"} className="h-5" />
+                          {apiseries.rating}
+                          <span className="text-grayscale-70">
+                            <span className="text-grayscale-70">
+                              {apiseries.genre.slice(0, 2).map((genre, i) => {
+                                if (i === genre.slice(0, 2).length - 1)
+                                  return genre;
+                                return genre + " • ";
+                              })}
+                            </span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-row h-56 pt-5 gap-5">
+                    <div className="flex flex-col">
+                      <img
+                        src={apiseries.big_image}
+                        className="w-64 h-44 object-cover object-center rounded-2xl"
+                      />
+                      <div className="flex flex-col gap-3">
+                        <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-bold">
+                          {apiseries.title}
+                        </span>
+                        <span className="flex text-sm gap-1 w-60">
+                          <img src={"./assets/start2.png"} className="h-5" />
+                          {apiseries.rating}
+                          <span className="text-grayscale-70">
+                            <span className="text-grayscale-70">
+                              {apiseries.genre.slice(0, 2).map((genre, i) => {
+                                if (i === genre.slice(0, 2).length - 1)
+                                  return genre;
+                                return genre + " • ";
+                              })}
+                            </span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ))}
           </div>
         </div>
