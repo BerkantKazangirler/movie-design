@@ -1,4 +1,5 @@
-import { Button, Films } from "../components";
+import { Button } from "../components";
+import { Home } from "../components/home";
 import search from "../../public/assets/Search.png";
 import userimage from "../../public/assets/user-image.png";
 import arrow from "../../public/assets/arrow.png";
@@ -11,8 +12,48 @@ import moon from "../../public/assets/moon.png";
 import setting from "../../public/assets/setting-2.png";
 import notification from "../../public/assets/Notification.png";
 import "../App.css";
+
+import { useState, useEffect } from "react";
+
+import movie100 from "../../public/top-100-movies.json";
+import series100 from "../../public/top-100-series.json";
+
+export interface MovieTypes {
+  big_image: string;
+  description: string;
+  genre: string[];
+  id: string;
+  image: string;
+  imbd_link: string;
+  imbid: string;
+  rank: number;
+  rating: string;
+  thumbnail: string;
+  title: string;
+  year: number;
+}
+
 const TopRated = () => {
-  // console.log(api);
+  const [apirated, setApiRated] = useState<MovieTypes[] | undefined>();
+  const [apiseries, setApiSeries] = useState<MovieTypes[] | undefined>();
+
+  const limitData = movie100.slice(0, 5);
+  const limitedMovieData = series100.slice(0, 6);
+  const limitedMovieDataa = series100.slice(6, 12);
+  useEffect(() => {
+    async function getJson() {
+      const response: MovieTypes[] = await fetch(
+        "../../../top-100-movies.json"
+      ).then((res) => res.json());
+
+      const responseseries: MovieTypes[] = await fetch(
+        "../../../top-100-series.json"
+      ).then((res) => res.json());
+      setApiRated(response);
+      setApiSeries(responseseries);
+    }
+    getJson();
+  }, []);
 
   return (
     <>
@@ -40,8 +81,8 @@ const TopRated = () => {
           </div>
         </header>
         <div className="flex flex-row">
-          <div className="bg-dark-smooth h-screen w-75">
-            <ul className="flex gap-5 flex-col font-bold">
+          <div className="bg-dark-smooth h-screen">
+            <ul className="flex gap-5 flex-col font-bold w-75">
               <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
               <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
                 <img src={discover} />
@@ -79,9 +120,26 @@ const TopRated = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-row p-10 w-full">
-            <Films />
-          </div>
+          {apirated &&
+            apiseries &&
+            limitData.map((apirated) => (
+              <div className="flex flex-row p-10 w-full">
+                <Home
+                  rankk={apirated && apirated.rank}
+                  big_image={apirated && apirated.big_image}
+                  description={apirated && apirated.description}
+                  title={apirated && apirated.title}
+                  image={apirated && apirated.image}
+                  genre={apirated && apirated.genre}
+                  thumbnail={apirated && apirated.thumbnail}
+                  rating={apirated && apirated.rating}
+                  id={apirated && apirated.id}
+                  year={apirated && apirated.year}
+                  imbid={apirated && apirated.imdbid}
+                  imbd_link={apirated && apirated.imdb_link}
+                />
+              </div>
+            ))}
         </div>
       </div>
     </>
