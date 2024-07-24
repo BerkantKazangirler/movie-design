@@ -1,5 +1,4 @@
-import { Button } from "../components";
-import { Home } from "../components/home";
+import { Button, Movies, Series } from "../components";
 
 import { useState, useEffect } from "react";
 
@@ -44,93 +43,111 @@ const TopRated = () => {
   }, []);
 
   return (
-    <>
-      <div className="flex bg-dark-background w-full h-screen overflow-y-hidden flex-col">
-        <header className="bg-dark-background justify-between px-16 h-fit w-full p-4 flex flex-row gap-40">
-          <div className="flex flex-row gap-60">
-            <span className="text-xl font-bold m-auto">CineMax</span>
-            <ul className="flex flex-row gap-5 m-auto">
-              <li>Movies</li>
-              <li>Series</li>
-              <li>Animation</li>
-              <li>Genres</li>
-            </ul>
+    <div className="flex bg-dark-background w-full h-screen overflow-y-hidden flex-col">
+      <header className="bg-dark-background justify-between px-16 h-fit w-full p-4 flex flex-row gap-40">
+        <div className="flex flex-row gap-60">
+          <span className="text-xl font-bold m-auto">CineMax</span>
+          <ul className="flex flex-row gap-5 m-auto">
+            <li>Movies</li>
+            <li>Series</li>
+            <li>Animation</li>
+            <li>Genres</li>
+          </ul>
+        </div>
+        <div className="flex flex-row gap-10">
+          <img src={"./assets/Search.png"} className="h-6 mr-20 m-auto" />
+          <Button size="normal" buttonstyle="primary" type="submit">
+            Payment
+          </Button>
+          <img src={"./assets/Notification.png"} className="h-8" />
+          <div className="flex flex-row gap-2">
+            <img src={"./assets/user-image.png"} />
+            <img src={"./assets/arrow.png"} className="h-2 m-auto" />
           </div>
-          <div className="flex flex-row gap-10">
-            <img src={"./assets/Search.png"} className="h-6 mr-20 m-auto" />
-            <Button size="normal" buttonstyle="primary" type="submit">
-              Payment
-            </Button>
-            <img src={"./assets/Notification.png"} className="h-8" />
-            <div className="flex flex-row gap-2">
-              <img src={"./assets/user-image.png"} />
-              <img src={"./assets/arrow.png"} className="h-2 m-auto" />
-            </div>
-          </div>
-        </header>
-        <div className="flex flex-row">
-          <div className="bg-dark-smooth h-screen">
-            <ul className="flex gap-5 flex-col font-bold w-75">
-              <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
-              <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
-                <img src={"./assets/discover.png"} />
-                Discovery
-              </li>
-              <li className="border-l-4 gap-3 flex flex-row border-main-primary pl-9">
-                <img src={"./assets/star.png"} />
-                Top Rated
-              </li>
-              <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-                <img src={"./assets/timer.png"} />
-                Coming Soon
-              </li>
-            </ul>
-            <ul className="flex gap-5 flex-col font-bold">
-              <li className="text-grayscale-60 uppercase pt-10 pl-10">
-                library
-              </li>
-              <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
-                <img src={"./assets/clock.png"} />
-                Recent Played
-              </li>
-              <li className="gap-3 flex flex-row text-grayscale-70 pl-10">
-                <img src={"./assets/document-download.png"} />
-                Download
-              </li>
-              <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-                <img src={"./assets/moon.png"} />
-                Dark Mode
-                <input type="checkbox" />
-              </li>
-              <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-                <img src={"./assets/setting-2.png"} />
-                Setting
-              </li>
-            </ul>
-          </div>
-          {apirated &&
-            apiseries &&
-            limitData.map((apirated) => (
-              <div className="flex flex-row p-10 w-full">
-                <Home
-                  rankk={apirated && apirated.rank}
-                  big_image={apirated && apirated.big_image}
-                  description={apirated && apirated.description}
-                  title={apirated && apirated.title}
-                  image={apirated && apirated.image}
-                  genre={apirated && apirated.genre}
-                  thumbnail={apirated && apirated.thumbnail}
-                  rating={apirated && apirated.rating}
-                  id={apirated && apirated.id}
-                  year={apirated && apirated.year}
-                  imbid={apirated && apirated.imdbid}
-                  imbd_link={apirated && apirated.imdb_link}
+        </div>
+      </header>
+      <div className="flex flex-row">
+        <div className="bg-dark-smooth h-screen">
+          <ul className="flex gap-5 flex-col font-bold w-75">
+            <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
+            <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
+              <img src={"./assets/discover.png"} />
+              Discovery
+            </li>
+            <li className="border-l-4 gap-3 flex flex-row border-main-primary pl-9">
+              <img src={"./assets/star.png"} />
+              Top Rated
+            </li>
+            <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
+              <img src={"./assets/timer.png"} />
+              Coming Soon
+            </li>
+          </ul>
+          <ul className="flex gap-5 flex-col font-bold">
+            <li className="text-grayscale-60 uppercase pt-10 pl-10">library</li>
+            <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
+              <img src={"./assets/clock.png"} />
+              Recent Played
+            </li>
+            <li className="gap-3 flex flex-row text-grayscale-70 pl-10">
+              <img src={"./assets/document-download.png"} />
+              Download
+            </li>
+            <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
+              <img src={"./assets/moon.png"} />
+              Dark Mode
+              <input type="checkbox" />
+            </li>
+            <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
+              <img src={"./assets/setting-2.png"} />
+              Setting
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col p-10 w-full">
+          <span className="text-2xl font-semibold pt-5">Top Rated</span>
+          <div className="flex flex-row">
+            {apirated &&
+              limitData.map((apirated) => (
+                <Movies
+                  rank={apirated.rank}
+                  big_image={apirated.big_image}
+                  description={apirated.description}
+                  genre={apirated.genre}
+                  id={apirated.id}
+                  image={apirated.image}
+                  imbd_link={apirated.imdb_link}
+                  imbid={apirated.imdbid}
+                  rating={apirated.rating}
+                  thumbnail={apirated.thumbnail}
+                  title={apirated.title}
+                  year={apirated.year}
                 />
-              </div>
-            ))}
+              ))}
+          </div>
+          <span className="text-2xl font-semibold pt-5">Best Of Series</span>
+          <div className="flex flex-row gap-10">
+            {apiseries &&
+              limitData.map((apiseries) => (
+                <Series
+                  rank={apiseries.rank}
+                  big_image={apiseries.big_image}
+                  description={apiseries.description}
+                  genre={apiseries.genre}
+                  id={apiseries.id}
+                  image={apiseries.image}
+                  imbd_link={apiseries.imdb_link}
+                  imbid={apiseries.imdbid}
+                  rating={apiseries.rating}
+                  thumbnail={apiseries.thumbnail}
+                  title={apiseries.title}
+                  year={apiseries.year}
+                />
+              ))}
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

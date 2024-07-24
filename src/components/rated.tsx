@@ -32,7 +32,7 @@ const Films = ({
 }: MovieTypes) => {
   return (
     <div className="flex flex-col">
-      <span className="text-2xl font-semibold">Top Rated</span>
+      <span className="text-2xl font-semibold pt-5">Top</span>
       <Movies
         rank={rankk}
         big_image={big_image}

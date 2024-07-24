@@ -13,9 +13,16 @@ export interface MovieTypes {
   year: number;
 }
 
-const Films = ({ rank, big_image, rating, year, title, genre }: MovieTypes) => {
+const Movies = ({
+  rank,
+  big_image,
+  rating,
+  year,
+  title,
+  genre,
+}: MovieTypes) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex">
       <div className="flex flex-row h-44 pt-5 gap-10">
         <div className="flex flex-row">
           <span className="text-4xl font-extrabold m-auto flex flex-row">
@@ -50,4 +57,4 @@ const Films = ({ rank, big_image, rating, year, title, genre }: MovieTypes) => {
   );
 };
 
-export default Films;
+export default Movies;
