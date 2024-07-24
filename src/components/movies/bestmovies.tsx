@@ -1,14 +1,8 @@
 export interface MovieTypes {
   big_image: string;
-  description: string;
   genre: string[];
-  id: string;
-  image: string;
-  imbd_link: string;
-  imbid: string;
   rank: number;
   rating: string;
-  thumbnail: string;
   title: string;
   year: number;
 }
