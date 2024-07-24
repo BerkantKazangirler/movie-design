@@ -46,14 +46,17 @@ const Films = () => {
   return (
     <div className="flex flex-col">
       <span className="text-2xl font-semibold">Top Rated</span>
-      <div className="flex flex-row h-44 pt-5 max-w-40 gap-48">
+      <div className="flex flex-row h-44 pt-5 gap-48">
         {apirated &&
           limitData.map((apirated) => (
             <div className="flex flex-row">
               <span className="text-4xl font-extrabold m-auto flex flex-row">
                 {apirated.rank}
               </span>
-              <img src={apirated.big_image} className="ml-4 rounded-2xl" />
+              <img
+                src={apirated.big_image}
+                className="ml-4 rounded-2xl h-32 w-28 object-cover object-center"
+              />
               <div className="flex flex-col ml-5 gap-3">
                 <span className="border border-line-dark rounded-xl px-3 py-2 text-[12px] max-w-fit">
                   {apirated.year}
@@ -63,9 +66,11 @@ const Films = () => {
                 </span>
                 <span className="flex text-sm max-w-fit text-grayscale-70">
                   <img src={category} className="h-4 m-auto" />
-                  {(apirated.genre[1] &&
-                    apirated.genre[0] + " • " + apirated.genre[1]) ||
-                    apirated.genre}
+                  {apirated.genre.slice(0, 2).map((genre, i) => {
+                    if (i === apirated.genre.slice(0, 2).length - 1)
+                      return genre;
+                    return genre + " • ";
+                  })}
                 </span>
                 <span className="flex text-sm">
                   <img src={star} className="h-5" />
@@ -83,7 +88,7 @@ const Films = () => {
               <div className="flex flex-col">
                 <img
                   src={apiseries.big_image}
-                  className="w-128 h-52 rounded-2xl"
+                  className="w-64 h-44 object-cover object-center rounded-2xl"
                 />
                 <div className="flex flex-col gap-3">
                   <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-bold">
@@ -93,12 +98,13 @@ const Films = () => {
                     <img src={star} className="h-5" />
                     {apiseries.rating}
                     <span className="text-grayscale-70">
-                      {(apiseries.genre[1] &&
-                        "| " +
-                          apiseries.genre[0] +
-                          " • " +
-                          apiseries.genre[1]) ||
-                        apiseries.genre}
+                      <span className="text-grayscale-70">
+                        {apiseries.genre.slice(0, 2).map((genre, i) => {
+                          if (i === apiseries.genre.slice(0, 2).length - 1)
+                            return genre;
+                          return genre + " • ";
+                        })}
+                      </span>
                     </span>
                   </span>
                 </div>
@@ -111,7 +117,7 @@ const Films = () => {
               <div className="flex flex-col">
                 <img
                   src={apiseries.big_image}
-                  className="w-128 h-52 rounded-2xl"
+                  className="w-64 h-44 object-cover object-center rounded-2xl"
                 />
                 <div className="flex flex-col gap-3">
                   <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-bold">
@@ -121,12 +127,7 @@ const Films = () => {
                     <img src={star} className="h-5" />
                     {apiseries.rating}
                     <span className="text-grayscale-70">
-                      {(apiseries.genre[1] &&
-                        "| " +
-                          apiseries.genre[0] +
-                          " • " +
-                          apiseries.genre[1]) ||
-                        apiseries.genre}
+                      {apiseries.genre.map((genre) => genre + " • ")}
                     </span>
                   </span>
                 </div>
