@@ -1,4 +1,4 @@
-import { Button } from "../components";
+import { Button, Films } from "../components";
 import search from "../../public/assets/Search.png";
 import userimage from "../../public/assets/user-image.png";
 import arrow from "../../public/assets/arrow.png";
@@ -11,8 +11,9 @@ import moon from "../../public/assets/moon.png";
 import setting from "../../public/assets/setting-2.png";
 import notification from "../../public/assets/Notification.png";
 import "../App.css";
+const TopRated = () => {
+  // console.log(api);
 
-const TopRated = ({}) => {
   return (
     <>
       <div className="flex bg-dark-background w-full h-screen overflow-y-hidden flex-col">
@@ -28,7 +29,7 @@ const TopRated = ({}) => {
           </div>
           <div className="flex flex-row gap-10">
             <img src={search} className="h-6 mr-20 m-auto" />
-            <Button size="normal" type="submit">
+            <Button size="normal" buttonstyle="primary" type="submit">
               Payment
             </Button>
             <img src={notification} className="h-8" />
@@ -38,42 +39,49 @@ const TopRated = ({}) => {
             </div>
           </div>
         </header>
-        <div className="bg-dark-smooth h-screen w-75">
-          <ul className="flex gap-5 flex-col font-bold">
-            <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
-            <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
-              <img src={discover} />
-              Discovery
-            </li>
-            <li className="border-l-4 gap-3 flex flex-row border-main-primary pl-10">
-              <img src={star} />
-              Top Rated
-            </li>
-            <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-              <img src={timer} />
-              Coming Soon
-            </li>
-          </ul>
-          <ul className="flex gap-5 flex-col font-bold">
-            <li className="text-grayscale-60 uppercase pt-10 pl-10">library</li>
-            <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
-              <img src={clock} />
-              Recent Played
-            </li>
-            <li className="gap-3 flex flex-row text-grayscale-70 pl-10">
-              <img src={file} />
-              Download
-            </li>
-            <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-              <img src={moon} />
-              Dark Mode
-              <input type="checkbox" />
-            </li>
-            <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-              <img src={setting} />
-              Setting
-            </li>
-          </ul>
+        <div className="flex flex-row">
+          <div className="bg-dark-smooth h-screen w-75">
+            <ul className="flex gap-5 flex-col font-bold">
+              <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
+              <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
+                <img src={discover} />
+                Discovery
+              </li>
+              <li className="border-l-4 gap-3 flex flex-row border-main-primary pl-9">
+                <img src={star} />
+                Top Rated
+              </li>
+              <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
+                <img src={timer} />
+                Coming Soon
+              </li>
+            </ul>
+            <ul className="flex gap-5 flex-col font-bold">
+              <li className="text-grayscale-60 uppercase pt-10 pl-10">
+                library
+              </li>
+              <li className="flex-row flex text-grayscale-70 gap-3 pl-10">
+                <img src={clock} />
+                Recent Played
+              </li>
+              <li className="gap-3 flex flex-row text-grayscale-70 pl-10">
+                <img src={file} />
+                Download
+              </li>
+              <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
+                <img src={moon} />
+                Dark Mode
+                <input type="checkbox" />
+              </li>
+              <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
+                <img src={setting} />
+                Setting
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-row p-10 w-full">
+            <Films />
+          </div>
         </div>
       </div>
     </>

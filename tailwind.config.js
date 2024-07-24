@@ -33,6 +33,7 @@ export default {
         'grayscale-80': '#66707a',
         'grayscale-90': '#434e58',
         'grayscale-100': '#171725',
+        'state-bg': '#00C566',
       },
       container: {
         screens: {

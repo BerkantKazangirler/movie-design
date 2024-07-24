@@ -29,11 +29,21 @@ const Login = ({}) => {
               Hey there, welcome back
             </p>
             <div className="pt-5 gap-5 flex flex-col">
-              <Button withIcon variant="line-dark" size="normal">
+              <Button
+                withIcon
+                variant="line-dark"
+                buttonstyle="secondary"
+                size="large"
+              >
                 <img src={googleLogo} className="w-6 relative mr-3" />
                 Login with Google
               </Button>
-              <Button withIcon variant="line-dark" size="normal">
+              <Button
+                withIcon
+                variant="line-dark"
+                buttonstyle="secondary"
+                size="large"
+              >
                 <img src={facebookLogo} className="w-3 relative mr-3" />
                 Login with Facebook
               </Button>
@@ -79,7 +89,9 @@ const Login = ({}) => {
                 <a href="#" className="text-end text-main-primary pt-3">
                   Forgot Password
                 </a>
-                <Button size="large">Login</Button>
+                <Button size="large" buttonstyle="primary">
+                  Login
+                </Button>
                 <span className="mt-3 text-grayscale-60">
                   Don't have an account?
                   <a href="#" className="text-main-primary ml-1">

@@ -5,16 +5,18 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   //buttonun bütün elemanlarını al (onclick vb)
   children: React.ReactNode;
   withIcon?: boolean;
-  variant?: "purple" | "line-dark";
+  variant?: "line-dark";
   type?: "submit" | "button" | "reset";
   size: "large" | "normal" | "small";
+  buttonstyle: "primary" | "secondary" | "tertiary" | "disable" | "state";
 }
 function Button({
   children,
   withIcon = false,
-  variant = "purple",
+  variant,
   type,
   size,
+  buttonstyle,
 }: ButtonProps) {
   return (
     <button
@@ -22,10 +24,23 @@ function Button({
       className={classname({
         //   "bg-main-primary": variant === "purple",
         // Eğer varitant'ı purple ise bg-main-primary'ı yap
-        "bg-main-primary": variant === "purple",
-        "bg-line-dark": variant === "line-dark",
+        //"bg-main-primary": variant === "purple",
+        // "bg-line-dark": variant === "line-dark",
         "justify-center": withIcon,
         flex: withIcon,
+
+        "bg-line-dark": variant == "line-dark",
+        "border-none": variant == "line-dark",
+
+        "bg-main-primary": buttonstyle == "primary",
+
+        border: buttonstyle == "secondary",
+        "border-main-primary": buttonstyle == "secondary",
+
+        "bg-grayscale-20": buttonstyle == "disable",
+        "disabled:": buttonstyle == "disable",
+
+        "bg-state-bg": buttonstyle == "state",
 
         "pt-[4px]": size == "small",
         "pr-[16px]": size == "small",
