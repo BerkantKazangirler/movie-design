@@ -1,5 +1,5 @@
 import { Switch } from "@headlessui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import classname from "classnames";
 
@@ -24,8 +24,23 @@ function HomeBar({ variant }: BarProps) {
   const toogleTheme = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("dark");
-    localStorage.setItem("darkMode", darkMode);
+    if (darkMode) {
+      localStorage.setItem("darkMode", "off");
+      return;
+    } else {
+      localStorage.setItem("darkMode", "on");
+      return;
+    }
   };
+
+  let local = localStorage.getItem("darkMode");
+
+  useEffect(() => {
+    if (local == "on") {
+      document.body.classList.toggle("dark");
+      return;
+    }
+  }, []);
 
   return (
     <div className="dark:bg-dark-smooth h-screen bg-grayscale-10">

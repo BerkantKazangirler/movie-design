@@ -1,4 +1,5 @@
 import { Button, Input } from "../components";
+import { useEffect } from "react";
 
 enum ErrorLangs {
   CardNumber = "11 Haneli Kart Numarası",
@@ -8,6 +9,14 @@ enum ErrorLangs {
 }
 
 const Payment = ({}) => {
+  let local = localStorage.getItem("darkMode");
+
+  useEffect(() => {
+    if (local == "on") {
+      document.body.classList.toggle("dark");
+      return;
+    }
+  }, []);
   return (
     <>
       <div className="flex w-full flex-col dark:bg-payment-bg bg-light-background h-screen overflow-y-hidden">

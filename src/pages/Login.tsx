@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Input } from "../components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,9 +8,16 @@ enum LoginLang {
 }
 
 const Login = ({}) => {
-  const test = localStorage.getItem("darkMode");
+  let local = localStorage.getItem("darkMode");
+
+  useEffect(() => {
+    if (local == "on") {
+      document.body.classList.toggle("dark");
+      return;
+    }
+  }, []);
+
   const [name, SetName] = useState("");
-  console.log(test);
 
   if (localStorage.getItem("login") == null) {
     localStorage.setItem("login", "berkant");
@@ -42,7 +49,7 @@ const Login = ({}) => {
               </p>
             </div>
             <img
-              src={`./assets/${test ? "mac-white" : "mac"}.png`}
+              src={`./assets/${local ? "mac" : "mac-white"}.png`}
               className="w-full"
             />
           </div>
