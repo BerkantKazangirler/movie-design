@@ -1,4 +1,4 @@
-import { Button, SideBar, Movies, Series } from "../components";
+import { Button, SideBar, Movies, Series, Input } from "../components";
 
 import { useState, useEffect } from "react";
 
@@ -20,11 +20,12 @@ export interface MovieTypes {
   year: number;
 }
 
-const TopRated = () => {
+const Home = () => {
   const [apirated, setApiRated] = useState<MovieTypes[] | undefined>();
   const [apiseries, setApiSeries] = useState<MovieTypes[] | undefined>();
 
   const darkMode = localStorage.getItem("darkMode");
+  console.log(darkMode);
 
   const limitData = movie100.slice(0, 5);
   const limitedMovieData = series100.slice(0, 5);
@@ -66,9 +67,17 @@ const TopRated = () => {
           </ul>
         </div>
         <div className="flex flex-row gap-10">
+          <Input
+            placeholder="Search..."
+            rounded="3xl"
+            id="name"
+            fontsize="sm"
+            // onChange={(e) => )}
+          />
           <img
-            src={`./assets/${darkMode ? "Search" : "mac"}.png`}
-            className="h-6 mr-20 m-auto"
+            src={`./assets/${darkMode ? "Search" : "google"}.png`}
+            className="h-6 m-auto flex mr-20"
+            onClick={() => alert("test")}
           />
           <Button size="normal" buttonstyle="primary" type="submit">
             Payment
@@ -84,7 +93,7 @@ const TopRated = () => {
         <SideBar variant="toprated" />
         <div className="flex flex-col p-10 w-full">
           <span
-            className="text-2xl font-semibold pt-5 dark:text-white text-black
+            className="text-2xl font-semibold pt-5 w-fit dark:text-white text-black
           "
           >
             Top Rated
@@ -104,9 +113,9 @@ const TopRated = () => {
           <span className="text-2xl font-semibold dark:text-white text-black">
             Best Of Series
           </span>
-          <div className="flex flex-row gap-10">
+          <div className="flex flex-row gap-10 w-full">
             {limitedMovieData.map((apiseries) => (
-              <div className="flex gap-14 flex-col">
+              <div className="flex flex-col">
                 <Series
                   rank={apiseries.rank}
                   big_image={apiseries.big_image}
@@ -124,4 +133,4 @@ const TopRated = () => {
   );
 };
 
-export default TopRated;
+export default Home;

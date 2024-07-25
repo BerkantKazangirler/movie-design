@@ -17,16 +17,19 @@ interface BarProps {
 function HomeBar({ variant }: BarProps) {
   const [darkMode, setDarkMode] = useState(false);
 
-  localStorage.setItem("darkMode", "false");
+  if (localStorage.getItem("darkMode") == null) {
+    localStorage.setItem("darkMode", "false");
+  }
 
   const toogleTheme = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("dark");
+    localStorage.setItem("darkMode", darkMode);
   };
 
   return (
     <div className="dark:bg-dark-smooth h-screen bg-grayscale-10">
-      <ul className="flex gap-5 flex-col font-bold w-75">
+      <ul className="flex gap-5 flex-col font-bold w-64 2xl:w-75">
         <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
         <li
           className={classname("flex-row flex text-grayscale-70 gap-3 pl-10", {
@@ -96,7 +99,7 @@ function HomeBar({ variant }: BarProps) {
           Dark Mode
           <Switch
             onChange={toogleTheme}
-            className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-blue-600"
+            className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-main-primary"
           >
             <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
           </Switch>

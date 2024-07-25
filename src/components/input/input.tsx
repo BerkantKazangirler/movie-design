@@ -8,8 +8,9 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   minlength?: number;
   type?: string;
   pattern?: string;
-  id?: string;
   fontsize?: string;
+  customClass?: string;
+  value?: string;
 }
 function Input({
   required,
@@ -21,13 +22,17 @@ function Input({
   pattern,
   id,
   fontsize,
+  customClass,
+  title,
+  value,
 }: InputProps) {
   return (
     <input
       id={id}
       placeholder={placeholder}
       className={classname(
-        "dark:bg-dark-smooth border-grayscale-10 dark:border-line-dark bg-line-light p-4",
+        customClass +
+          " dark:bg-dark-smooth dark:text-white text-black border-grayscale-10 dark:border-line-dark bg-line-light p-4",
         {
           "required:": required == "true",
           "rounded-2xl": rounded == "2xl",
@@ -39,11 +44,13 @@ function Input({
           "font-xl": fontsize == "xl",
         }
       )}
+      title={title}
+      value={value}
       type={type}
       pattern={pattern}
       maxLength={maxlength}
       minLength={minlength}
-    ></input>
+    />
   );
 }
 

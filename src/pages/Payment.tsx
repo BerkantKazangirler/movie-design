@@ -1,5 +1,11 @@
 import { Button, Input } from "../components";
-import "../App.css";
+
+enum ErrorLangs {
+  CardNumber = "11 Haneli Kart Numarası",
+  Date = "YY/MM",
+  cvv = "CVV Hanesi",
+  PostalCode = "Bölge Kodu",
+}
 
 const Payment = ({}) => {
   return (
@@ -43,6 +49,9 @@ const Payment = ({}) => {
                     className="w-4 accent-main-primary"
                   />
                   <img src={"./assets/applepay.png"} className="h-6 ml-3" />
+                  <span className="font-bold italic dark:text-white text-black">
+                    Pay
+                  </span>
                 </label>
                 <span className="text-grayscale-70 text-sm">
                   Or checkout using a credit card
@@ -74,6 +83,8 @@ const Payment = ({}) => {
                         maxlength={16}
                         minlength={16}
                         id="cardnumber"
+                        pattern="[0-9]{13,16}"
+                        title={ErrorLangs.CardNumber}
                       />
                     </div>
                     <div className="flex flex-col w-28 gap-2">
@@ -87,6 +98,9 @@ const Payment = ({}) => {
                         placeholder="MM/YY"
                         rounded="3xl"
                         id="expiration"
+                        pattern="[0-9]{4}"
+                        title={ErrorLangs.Date}
+                        maxlength={4}
                       />
                     </div>
                     <div className="flex flex-col w-28 gap-2">
@@ -101,7 +115,8 @@ const Payment = ({}) => {
                         rounded="3xl"
                         maxlength={3}
                         minlength={3}
-                        pattern="[A-Za-z]{3}"
+                        pattern="[0-9]{3}"
+                        title={ErrorLangs.cvv}
                       />
                     </div>
                   </div>
@@ -116,6 +131,8 @@ const Payment = ({}) => {
                       placeholder="Postal Or Zip Code"
                       rounded="3xl"
                       id="postalcode"
+                      pattern="(\d{5}([\-]\d{4})?)"
+                      title={ErrorLangs.PostalCode}
                     />
                   </div>
                 </div>

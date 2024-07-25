@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button, Input } from "../components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,6 +9,7 @@ enum LoginLang {
 
 const Login = ({}) => {
   const test = localStorage.getItem("darkMode");
+  const [name, SetName] = useState("");
   console.log(test);
 
   if (localStorage.getItem("login") == null) {
@@ -19,6 +21,9 @@ const Login = ({}) => {
       toast.error(LoginLang.WrongLogin);
       return;
     }
+
+    console.log(name);
+
     console.log("Giriş Değerleri " + localStorage.getItem("login"));
   }
   function forgotPassword() {}
@@ -102,6 +107,7 @@ const Login = ({}) => {
                   minlength={5}
                   id="name"
                   fontsize="sm"
+                  onChange={(e) => SetName(e.currentTarget.value)}
                 />
                 <label
                   htmlFor="pass"
