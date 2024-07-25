@@ -36,10 +36,12 @@ const Login = ({}) => {
             <img src={"./assets/mac.png"} className="w-full" />
           </div>
         </div>
-        <div className="w-1/2 text-center p-5 px-24 bg-dark-background">
-          <span className="font-extrabold">CineMax</span>
+        <div className="w-1/2 text-center p-5 px-24 dark:bg-dark-background bg-light-background">
+          <span className="font-extrabold dark:text-white text-black">
+            CineMax
+          </span>
           <div className="pt-14">
-            <p className="text-3xl font-bold max-w-56 m-auto">
+            <p className="text-3xl font-bold max-w-56 m-auto dark:text-white text-black">
               Hey there, welcome back
             </p>
             <div className="pt-5 gap-5 flex flex-col">
@@ -69,11 +71,11 @@ const Login = ({}) => {
               </Button>
             </div>
             <div className="flex flex-row pt-5 gap-3">
-              <hr className="w-full h-1 border-line-dark relative mt-2" />
+              <hr className="w-full h-1 dark:border-line-dark border-line-light relative mt-2" />
               <span className="text-grayscale-70 w-72 text-sm">
                 Or login with
               </span>
-              <hr className="w-full h-1 border-line-dark relative mt-2" />
+              <hr className="w-full h-1 dark:border-line-dark border-line-light relative mt-2" />
             </div>
             <form
               action=""

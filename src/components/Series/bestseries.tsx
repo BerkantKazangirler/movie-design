@@ -16,10 +16,10 @@ const Series = ({ big_image, rating, title, genre }: MovieTypes) => {
             className="w-64 h-44 object-cover object-center rounded-2xl"
           />
           <div className="flex flex-col gap-3">
-            <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-bold">
+            <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-semibold dark:text-white text-black">
               {title}
             </span>
-            <span className="flex text-sm gap-1 w-60">
+            <span className="flex text-sm font-semibold gap-1 w-60 dark:text-white text-black">
               <img src={"./assets/start2.png"} className="h-5" />
               {rating}
               <span className="text-grayscale-70">
@@ -41,10 +41,10 @@ const Series = ({ big_image, rating, title, genre }: MovieTypes) => {
             className="w-64 h-44 object-cover object-center rounded-2xl"
           />
           <div className="flex flex-col gap-3">
-            <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-bold">
+            <span className="w-52 text-ellipsis whitespace-nowrap overflow-hidden font-bold dark:text-white text-black">
               {title}
             </span>
-            <span className="flex text-sm gap-1 w-60">
+            <span className="flex text-sm gap-1 w-60 dark:text-white font-semibold text-black">
               <img src={"./assets/start2.png"} className="h-5" />
               {rating}
               <span className="text-grayscale-70">

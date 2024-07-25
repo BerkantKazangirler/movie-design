@@ -29,7 +29,11 @@ function Button({
         "justify-center": withIcon,
         flex: withIcon,
 
-        "bg-line-dark": variant == "line-dark",
+        "dark:bg-line-dark": variant == "line-dark",
+        "bg-grayscale-10": variant == "line-dark",
+        "dark:text-white": variant == "line-dark",
+        "text-black": variant == "line-dark",
+        "font-bold": variant == "line-dark",
         "border-none": variant == "line-dark",
 
         "bg-main-primary": buttonstyle == "primary",

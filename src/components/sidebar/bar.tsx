@@ -16,14 +16,22 @@ interface BarProps {
 }
 function HomeBar({ variant }: BarProps) {
   const [darkMode, setDarkMode] = useState(false);
+
+  localStorage.setItem("darkMode", "");
+
+  const toogleTheme = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle("dark");
+  };
   return (
-    <div className="bg-dark-smooth h-screen">
+    <div className="dark:bg-dark-smooth h-screen bg-grayscale-10">
       <ul className="flex gap-5 flex-col font-bold w-75">
         <li className="text-grayscale-60 uppercase pt-10 pl-10">Menu</li>
         <li
           className={classname("flex-row flex text-grayscale-70 gap-3 pl-10", {
             "border-l-4": variant == "discovery",
-            "text-white": variant == "discovery",
+            "text-black": variant == "discovery",
+            "dark:text-white": variant == "discovery",
             "border-main-primary": variant == "discovery",
             "pl-9": variant == "discovery",
           })}
@@ -32,9 +40,10 @@ function HomeBar({ variant }: BarProps) {
           Discovery
         </li>
         <li
-          className={classname("flex-row flex text-grayscale-70 gap-3 pl-10", {
+          className={classname("flex-row flex gap-3 pl-10", {
             "border-l-4": variant == "toprated",
-            "text-white": variant == "toprated",
+            "text-black": variant == "toprated",
+            "dark:text-white": variant == "toprated",
             "border-main-primary": variant == "toprated",
             "pl-9": variant == "toprated",
           })}
@@ -46,6 +55,7 @@ function HomeBar({ variant }: BarProps) {
           className={classname("flex-row flex text-grayscale-70 gap-3 pl-10", {
             "border-l-4": variant == "comming-soon",
             "text-white": variant == "comming-soon",
+            "dark:text-black": variant == "comming-soon",
             "border-main-primary": variant == "comming-soon",
             "pl-9": variant == "comming-soon",
           })}
@@ -60,6 +70,7 @@ function HomeBar({ variant }: BarProps) {
           className={classname("flex-row flex text-grayscale-70 gap-3 pl-10", {
             "border-l-4": variant == "recent-played",
             "text-white": variant == "recent-played",
+            "dark:text-black": variant == "recent-played",
             "border-main-primary": variant == "recent-played",
             "pl-9": variant == "recent-played",
           })}
@@ -71,6 +82,7 @@ function HomeBar({ variant }: BarProps) {
           className={classname("flex-row flex text-grayscale-70 gap-3 pl-10", {
             "border-l-4": variant == "download",
             "text-white": variant == "download",
+            "dark:text-black": variant == "download",
             "border-main-primary": variant == "download",
             "pl-9": variant == "download",
           })}
@@ -82,8 +94,7 @@ function HomeBar({ variant }: BarProps) {
           <img src={"./assets/moon.png"} />
           Dark Mode
           <Switch
-            checked={darkMode}
-            onChange={setDarkMode}
+            onChange={toogleTheme}
             className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-blue-600"
           >
             <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />

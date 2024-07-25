@@ -4,9 +4,11 @@ import "../App.css";
 const Payment = ({}) => {
   return (
     <>
-      <div className="flex w-full flex-col bg-payment-bg h-screen overflow-y-hidden">
-        <div className="flex justify-center w-full p-4 h-fit border-b border-line-dark">
-          <span className="font-bold">CineMax</span>
+      <div className="flex w-full flex-col dark:bg-payment-bg bg-light-background h-screen overflow-y-hidden">
+        <div className="flex justify-center w-full p-4 h-fit border-b dark:border-line-dark border-line-light">
+          <span className="font-semibold text-grayscale-100 dark:text-white">
+            CineMax
+          </span>
         </div>
         <form
           action=""
@@ -17,7 +19,9 @@ const Payment = ({}) => {
         >
           <div className="flex justify-between pl-75">
             <div className="w-full max-w-128 pt-14">
-              <span className="font-bold text-xl">Payment Method</span>
+              <span className="font-bold text-xl dark:text-white text-black">
+                Payment Method
+              </span>
               <div className="flex flex-col gap-5 pt-5">
                 <label className="flex-row flex w-full border p-3 p rounded-3xl border-main-primary">
                   <input
@@ -27,7 +31,9 @@ const Payment = ({}) => {
                     className="w-4 accent-main-primary"
                   />
                   <img src={"./assets/paypal.png"} className="h-6 ml-3" />
-                  <span className="font-bold italic ml-2">Paypal</span>
+                  <span className="font-bold italic ml-2 dark:text-white text-black">
+                    Paypal
+                  </span>
                 </label>
                 <label className="flex-row flex w-full border p-3 p rounded-3xl border-main-primary">
                   <input
@@ -115,23 +121,29 @@ const Payment = ({}) => {
                 </div>
               </div>
             </div>
-            <div className="h-screen bg-dark-smooth w-128 flex">
+            <div className="h-screen dark:bg-dark-smooth bg-grayscale-10 w-128 flex">
               <div className="p-16 w-full flex gap-5 flex-col max-h-75">
                 <div className="justify-between flex">
                   <span className="text-grayscale-60">Subtotal</span>
-                  <span>$4.99</span>
+                  <span className="dark:text-white text-grayscale-100">
+                    $4.99
+                  </span>
                 </div>
                 <div className="justify-between flex">
                   <span className="text-grayscale-60">Plan type</span>
-                  <span>Monthly</span>
+                  <span className="dark:text-white text-grayscale-100">
+                    Monthly
+                  </span>
                 </div>
                 <div className="justify-between flex">
                   <span className="text-grayscale-60">
                     Monthly plan discount
                   </span>
-                  <span>-$5</span>
+                  <span className="dark:text-white text-grayscale-100">
+                    -$5
+                  </span>
                 </div>
-                <hr className="border-line-dark" />
+                <hr className="dark:border-line-dark bg-line-light" />
                 <div className="justify-between flex">
                   <span className="text-grayscale-60">Billed Now</span>
                   <span className="text-main-primary">$35</span>

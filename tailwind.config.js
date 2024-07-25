@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       spacing: {
@@ -15,7 +16,7 @@ export default {
       colors: {
         'payment-bg' : '#1E1E1E',
         'main-primary':'#b43feb',
-        'light-background':'#0d0c0f',
+        'light-background':'#ffffff',
         'dark-background': '#0d0c0f',
         'alert-success': '#25dc37',
         'alert-error': '#eb3f5e',

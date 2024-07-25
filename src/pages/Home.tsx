@@ -42,15 +42,25 @@ const TopRated = () => {
   }, []);
 
   return (
-    <div className="flex bg-dark-background w-full h-screen overflow-y-hidden flex-col">
-      <header className="bg-dark-background justify-between px-16 h-fit w-full p-4 flex flex-row gap-40">
+    <div className="flex dark:bg-dark-background bg-light-background w-full h-screen overflow-y-hidden flex-col">
+      <header className="dark:bg-dark-background bg-light-background justify-between px-16 h-fit w-full p-4 flex flex-row gap-40">
         <div className="flex flex-row gap-60">
-          <span className="text-xl font-semibold ml-8 m-auto">CineMax</span>
-          <ul className="flex flex-row gap-5 m-auto">
-            <li>Movies</li>
-            <li>Series</li>
-            <li>Animation</li>
-            <li>Genres</li>
+          <span className="text-xl font-semibold ml-8 m-auto dark:text-white text-black">
+            CineMax
+          </span>
+          <ul className="flex flex-row gap-5 m-auto dark:text-white text-black">
+            <li>
+              <a href="#">Movies</a>
+            </li>
+            <li>
+              <a href="#">Series</a>
+            </li>
+            <li>
+              <a href="#">Animation</a>
+            </li>
+            <li>
+              <a href="#">Genres</a>
+            </li>
           </ul>
         </div>
         <div className="flex flex-row gap-10">
@@ -68,7 +78,12 @@ const TopRated = () => {
       <div className="flex flex-row">
         <SideBar variant="toprated" />
         <div className="flex flex-col p-10 w-full">
-          <span className="text-2xl font-semibold pt-5">Top Rated</span>
+          <span
+            className="text-2xl font-semibold pt-5 dark:text-white text-black
+          "
+          >
+            Top Rated
+          </span>
           <div className="flex flex-row">
             {limitData.map((apirated) => (
               <Movies
@@ -81,7 +96,9 @@ const TopRated = () => {
               />
             ))}
           </div>
-          <span className="text-2xl font-semibold">Best Of Series</span>
+          <span className="text-2xl font-semibold dark:text-white text-black">
+            Best Of Series
+          </span>
           <div className="flex flex-row gap-10">
             {limitedMovieData.map((apiseries) => (
               <div className="flex gap-14 flex-col">

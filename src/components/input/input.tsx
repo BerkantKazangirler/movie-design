@@ -26,16 +26,19 @@ function Input({
     <input
       id={id}
       placeholder={placeholder}
-      className={classname("bg-dark-smooth border-line-dark p-4", {
-        "required:": required == "true",
-        "rounded-2xl": rounded == "2xl",
-        "rounded-3xl": rounded == "3xl",
-        "rounded-xl": rounded == "xl",
-        "text-sm": fontsize == "sm",
-        "text-lg": fontsize == "lg",
-        "text-2xl": fontsize == "2xl",
-        "font-xl": fontsize == "xl",
-      })}
+      className={classname(
+        "dark:bg-dark-smooth border-grayscale-10 dark:border-line-dark bg-line-light p-4",
+        {
+          "required:": required == "true",
+          "rounded-2xl": rounded == "2xl",
+          "rounded-3xl": rounded == "3xl",
+          "rounded-xl": rounded == "xl",
+          "text-sm": fontsize == "sm",
+          "text-lg": fontsize == "lg",
+          "text-2xl": fontsize == "2xl",
+          "font-xl": fontsize == "xl",
+        }
+      )}
       type={type}
       pattern={pattern}
       maxLength={maxlength}
