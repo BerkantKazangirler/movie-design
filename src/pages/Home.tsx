@@ -24,6 +24,8 @@ const TopRated = () => {
   const [apirated, setApiRated] = useState<MovieTypes[] | undefined>();
   const [apiseries, setApiSeries] = useState<MovieTypes[] | undefined>();
 
+  const darkMode = localStorage.getItem("darkMode");
+
   const limitData = movie100.slice(0, 5);
   const limitedMovieData = series100.slice(0, 5);
   useEffect(() => {
@@ -64,7 +66,10 @@ const TopRated = () => {
           </ul>
         </div>
         <div className="flex flex-row gap-10">
-          <img src={"./assets/Search.png"} className="h-6 mr-20 m-auto" />
+          <img
+            src={`./assets/${darkMode ? "Search" : "mac"}.png`}
+            className="h-6 mr-20 m-auto"
+          />
           <Button size="normal" buttonstyle="primary" type="submit">
             Payment
           </Button>

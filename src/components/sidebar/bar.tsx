@@ -17,12 +17,13 @@ interface BarProps {
 function HomeBar({ variant }: BarProps) {
   const [darkMode, setDarkMode] = useState(false);
 
-  localStorage.setItem("darkMode", "");
+  localStorage.setItem("darkMode", "false");
 
   const toogleTheme = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("dark");
   };
+
   return (
     <div className="dark:bg-dark-smooth h-screen bg-grayscale-10">
       <ul className="flex gap-5 flex-col font-bold w-75">

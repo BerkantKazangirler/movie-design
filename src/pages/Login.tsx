@@ -7,8 +7,11 @@ enum LoginLang {
 }
 
 const Login = ({}) => {
+  const test = localStorage.getItem("darkMode");
+  console.log(test);
+
   if (localStorage.getItem("login") == null) {
-    localStorage.setItem("login", "berkant , 12345678");
+    localStorage.setItem("login", "berkant");
   }
   function onLogin() {
     if (localStorage.getItem("login") == "") {
@@ -33,7 +36,10 @@ const Login = ({}) => {
                 justo, laoreet id sem semper parturient.
               </p>
             </div>
-            <img src={"./assets/mac.png"} className="w-full" />
+            <img
+              src={`./assets/${test ? "mac-white" : "mac"}.png`}
+              className="w-full"
+            />
           </div>
         </div>
         <div className="w-1/2 text-center p-5 px-24 dark:bg-dark-background bg-light-background">
