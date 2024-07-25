@@ -1,7 +1,24 @@
 import { Button, Input } from "../components";
-import "../App.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+enum LoginLang {
+  WrongLogin = "Yanlış İsim / Şifre",
+}
 
 const Login = ({}) => {
+  if (localStorage.getItem("login") == null) {
+    localStorage.setItem("login", "berkant , 12345678");
+  }
+  function onLogin() {
+    if (localStorage.getItem("login") == "") {
+      console.log("Boş");
+      toast.error(LoginLang.WrongLogin);
+      return;
+    }
+    console.log("Giriş Değerleri " + localStorage.getItem("login"));
+  }
+  function forgotPassword() {}
   return (
     <>
       <div className="flex bg-main-primary w-full h-screen overflow-y-hidden">
@@ -63,6 +80,7 @@ const Login = ({}) => {
               onSubmit={(e) => {
                 e.stopPropagation();
                 e.preventDefault();
+                onLogin();
               }}
             >
               <div className="flex flex-col pt-8">
@@ -75,6 +93,7 @@ const Login = ({}) => {
                   maxlength={32}
                   minlength={5}
                   id="name"
+                  fontsize="sm"
                 />
                 <label
                   htmlFor="pass"
@@ -88,11 +107,15 @@ const Login = ({}) => {
                   rounded="2xl"
                   minlength={5}
                   type="password"
+                  fontsize="sm"
                 />
-                <a href="#" className="text-end text-main-primary pt-3">
+                <span
+                  className="self-end w-fit text-main-primary pt-3 mb-8 hover:cursor-pointer"
+                  onClick={() => forgotPassword()}
+                >
                   Forgot Password
-                </a>
-                <Button size="large" buttonstyle="primary">
+                </span>
+                <Button size="large" type="submit" buttonstyle="primary">
                   Login
                 </Button>
                 <span className="mt-3 text-grayscale-60">
@@ -105,6 +128,7 @@ const Login = ({}) => {
             </form>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );

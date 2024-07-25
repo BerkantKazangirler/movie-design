@@ -1,4 +1,8 @@
+import { Switch } from "@headlessui/react";
+import { useState } from "react";
+
 import classname from "classnames";
+
 //classnames bir kütüphane
 interface BarProps {
   //buttonun bütün elemanlarını al (onclick vb)
@@ -11,6 +15,7 @@ interface BarProps {
     | "settings";
 }
 function HomeBar({ variant }: BarProps) {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <div className="bg-dark-smooth h-screen">
       <ul className="flex gap-5 flex-col font-bold w-75">
@@ -76,7 +81,13 @@ function HomeBar({ variant }: BarProps) {
         <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
           <img src={"./assets/moon.png"} />
           Dark Mode
-          <input type="checkbox" />
+          <Switch
+            checked={darkMode}
+            onChange={setDarkMode}
+            className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-blue-600"
+          >
+            <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
+          </Switch>
         </li>
         <li
           className={classname("flex-row flex text-grayscale-70 gap-3 pl-10", {

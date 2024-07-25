@@ -1,4 +1,4 @@
-import { Button, HomeBar, Movies, Series } from "../components";
+import { Button, SideBar, Movies, Series } from "../components";
 
 import { useState, useEffect } from "react";
 
@@ -29,11 +29,11 @@ const TopRated = () => {
   useEffect(() => {
     async function getJson() {
       const response: MovieTypes[] = await fetch(
-        "../../../top-100-movies.json"
+        "../../top-100-movies.json"
       ).then((res) => res.json());
 
       const responseseries: MovieTypes[] = await fetch(
-        "../../../top-100-series.json"
+        "../../top-100-series.json"
       ).then((res) => res.json());
       setApiRated(response);
       setApiSeries(responseseries);
@@ -66,7 +66,7 @@ const TopRated = () => {
         </div>
       </header>
       <div className="flex flex-row">
-        <HomeBar variant="toprated" />
+        <SideBar variant="toprated" />
         <div className="flex flex-col p-10 w-full">
           <span className="text-2xl font-semibold pt-5">Top Rated</span>
           <div className="flex flex-row">

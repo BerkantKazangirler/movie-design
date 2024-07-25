@@ -9,6 +9,7 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   type?: string;
   pattern?: string;
   id?: string;
+  fontsize?: string;
 }
 function Input({
   required,
@@ -19,6 +20,7 @@ function Input({
   type,
   pattern,
   id,
+  fontsize,
 }: InputProps) {
   return (
     <input
@@ -29,6 +31,10 @@ function Input({
         "rounded-2xl": rounded == "2xl",
         "rounded-3xl": rounded == "3xl",
         "rounded-xl": rounded == "xl",
+        "text-sm": fontsize == "sm",
+        "text-lg": fontsize == "lg",
+        "text-2xl": fontsize == "2xl",
+        "font-xl": fontsize == "xl",
       })}
       type={type}
       pattern={pattern}
