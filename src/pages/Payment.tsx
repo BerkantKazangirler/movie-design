@@ -17,6 +17,7 @@ const Payment = ({}) => {
       return;
     }
   }, []);
+
   return (
     <>
       <div className="flex w-full flex-col dark:bg-payment-bg bg-light-background h-screen overflow-y-hidden">
@@ -45,7 +46,7 @@ const Payment = ({}) => {
                     id="paypal"
                     className="w-4 accent-main-primary"
                   />
-                  <img src={"./assets/paypal.png"} className="h-6 ml-3" />
+                  <img src={"./assets/paypal.svg"} className="h-6 ml-3" />
                   <span className="font-bold italic ml-2 dark:text-white text-black">
                     Paypal
                   </span>
@@ -57,7 +58,7 @@ const Payment = ({}) => {
                     id="applepay"
                     className="w-4 accent-main-primary"
                   />
-                  <img src={"./assets/applepay.png"} className="h-6 ml-3" />
+                  <img src={"./assets/applepay.svg"} className="h-6 ml-3" />
                   <span className="font-bold italic dark:text-white text-black">
                     Pay
                   </span>

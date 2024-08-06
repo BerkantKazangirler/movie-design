@@ -20,7 +20,7 @@ const Series = ({ big_image, rating, title, genre }: MovieTypes) => {
               {title}
             </span>
             <span className="flex text-sm font-semibold gap-1 w-full dark:text-white text-black">
-              <img src={"./assets/start2.png"} className="h-5" />
+              <img src={"./assets/film-star.svg"} className="h-5" />
               {rating}
               <span className="text-grayscale-70">
                 <span className="text-grayscale-70">

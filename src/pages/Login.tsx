@@ -22,6 +22,11 @@ const Login = ({}) => {
   if (localStorage.getItem("login") == null) {
     localStorage.setItem("login", "berkant");
   }
+
+  if (localStorage.getItem("darkMode") == null) {
+    localStorage.setItem("darkMode", "false");
+  }
+
   function onLogin() {
     if (localStorage.getItem("login") == "") {
       console.log("Boş");
@@ -49,7 +54,7 @@ const Login = ({}) => {
               </p>
             </div>
             <img
-              src={`./assets/${local ? "mac" : "mac-white"}.png`}
+              src={`./assets/${local ? "mac" : "mac-white"}.svg`}
               className="w-full"
             />
           </div>
@@ -70,7 +75,7 @@ const Login = ({}) => {
                 size="large"
               >
                 <img
-                  src={"./assets/google.png"}
+                  src={"./assets/google.svg"}
                   className="w-6 relative mr-3"
                 />
                 Login with Google
@@ -82,7 +87,7 @@ const Login = ({}) => {
                 size="large"
               >
                 <img
-                  src={"./assets/facebook.png"}
+                  src={"./assets/facebook.svg"}
                   className="w-3 relative mr-3"
                 />
                 Login with Facebook

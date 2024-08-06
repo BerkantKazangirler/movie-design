@@ -1,5 +1,4 @@
 import { Switch } from "@headlessui/react";
-import { useState, useEffect } from "react";
 
 import classname from "classnames";
 
@@ -13,35 +12,10 @@ interface BarProps {
     | "recent-played"
     | "download"
     | "settings";
+  darkMode: boolean;
+  setDarkMode: (darkMode: boolean) => void;
 }
-function HomeBar({ variant }: BarProps) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  if (localStorage.getItem("darkMode") == null) {
-    localStorage.setItem("darkMode", "false");
-  }
-
-  const toogleTheme = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark");
-    if (darkMode) {
-      localStorage.setItem("darkMode", "off");
-      return;
-    } else {
-      localStorage.setItem("darkMode", "on");
-      return;
-    }
-  };
-
-  let local = localStorage.getItem("darkMode");
-
-  useEffect(() => {
-    if (local == "on") {
-      document.body.classList.toggle("dark");
-      return;
-    }
-  }, []);
-
+function SideBar({ variant, darkMode, setDarkMode }: BarProps) {
   return (
     <div className="dark:bg-dark-smooth h-screen bg-grayscale-10">
       <ul className="flex gap-5 flex-col font-bold w-64 2xl:w-75">
@@ -55,7 +29,7 @@ function HomeBar({ variant }: BarProps) {
             "pl-9": variant == "discovery",
           })}
         >
-          <img src={"./assets/discover.png"} />
+          <img src={"./assets/discover.svg"} />
           Discovery
         </li>
         <li
@@ -67,7 +41,7 @@ function HomeBar({ variant }: BarProps) {
             "pl-9": variant == "toprated",
           })}
         >
-          <img src={"./assets/star.png"} />
+          <img src={"./assets/star.svg"} />
           Top Rated
         </li>
         <li
@@ -79,7 +53,7 @@ function HomeBar({ variant }: BarProps) {
             "pl-9": variant == "comming-soon",
           })}
         >
-          <img src={"./assets/timer.png"} />
+          <img src={"./assets/timer.svg"} />
           Coming Soon
         </li>
       </ul>
@@ -94,7 +68,7 @@ function HomeBar({ variant }: BarProps) {
             "pl-9": variant == "recent-played",
           })}
         >
-          <img src={"./assets/clock.png"} />
+          <img src={"./assets/clock.svg"} />
           Recent Played
         </li>
         <li
@@ -106,14 +80,17 @@ function HomeBar({ variant }: BarProps) {
             "pl-9": variant == "download",
           })}
         >
-          <img src={"./assets/document-download.png"} />
+          <img src={"./assets/document-download.svg"} />
           Download
         </li>
         <li className="gap-3 flex flex-row pl-10 text-grayscale-70">
-          <img src={"./assets/moon.png"} />
+          <img src={"./assets/moon.svg"} />
           Dark Mode
           <Switch
-            onChange={toogleTheme}
+            onChange={(e) => {
+              setDarkMode(e);
+            }}
+            checked={darkMode}
             className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-main-primary"
           >
             <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
@@ -127,7 +104,7 @@ function HomeBar({ variant }: BarProps) {
             "pl-9": variant == "settings",
           })}
         >
-          <img src={"./assets/setting-2.png"} />
+          <img src={"./assets/setting-2.svg"} />
           Settings
         </li>
       </ul>
@@ -135,4 +112,4 @@ function HomeBar({ variant }: BarProps) {
   );
 }
 
-export default HomeBar;
+export default SideBar;

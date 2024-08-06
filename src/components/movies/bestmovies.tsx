@@ -32,11 +32,11 @@ const Movies = ({
           {title}
         </span>
         <span className="flex text-sm max-w-fit text-grayscale-70">
-          <img src={"./assets/category.png"} className="h-4 m-auto" />
+          <img src={"./assets/film.svg"} className="h-4 m-auto" />
           {(genre[1] && genre[0] + " • " + genre[1]) || genre}
         </span>
         <span className="flex text-sm font-semibold dark:text-white w-fit text-black">
-          <img src={"./assets/start2.png"} className="h-5" />
+          <img src={"./assets/film-star.svg"} className="h-5" />
           {rating}
         </span>
       </div>
