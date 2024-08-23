@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import movie100 from "../../public/top-100-movies.json";
 import series100 from "../../public/top-100-series.json";
 import cn from "classnames";
-import Payment from "./Payment";
+
 export interface MovieTypes {
   big_image: string;
   description: string;

@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 enum LoginLang {
   WrongLogin = "Yanlış İsim / Şifre",
+  EmptyLogin = "Boş Bırakmayınız",
 }
 
 const Login = ({}) => {
@@ -15,28 +16,27 @@ const Login = ({}) => {
       document.body.classList.toggle("dark");
       return;
     }
-  }, []);
+  });
 
   const [name, SetName] = useState("");
-
-  if (localStorage.getItem("login") == null) {
-    localStorage.setItem("login", "berkant");
-  }
 
   if (localStorage.getItem("darkMode") == null) {
     localStorage.setItem("darkMode", "false");
   }
 
   function onLogin() {
-    if (localStorage.getItem("login") == "") {
-      console.log("Boş");
-      toast.error(LoginLang.WrongLogin);
-      return;
-    }
-
     console.log(name);
 
-    console.log("Giriş Değerleri " + localStorage.getItem("login"));
+    // if (localStorage.getItem("login") == "") {
+    //    console.log("Boş");
+    //   toast.error(LoginLang.WrongLogin);
+    //    return;
+    //  }
+
+    if (name === "") {
+      toast.error(LoginLang.EmptyLogin);
+      return;
+    }
   }
   function forgotPassword() {}
   return (
@@ -190,7 +190,9 @@ const Login = ({}) => {
                   minlength={5}
                   id="name"
                   fontsize="sm"
-                  onChange={(e) => SetName(e.currentTarget.value)}
+                  onChange={(e) => {
+                    SetName(e.currentTarget.innerText);
+                  }}
                 />
                 <label
                   htmlFor="pass"

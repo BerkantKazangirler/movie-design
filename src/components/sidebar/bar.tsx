@@ -191,43 +191,6 @@ function SideBar({ variant, darkMode, setDarkMode }: BarProps) {
                 fill="#78828A"
               />
             </g>
-            <defs>
-              <filter
-                id="filter0_d_2218_33"
-                x="0.251526"
-                y="1.24792"
-                width="28.8634"
-                height="29.5021"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feOffset dy="4" />
-                <feGaussianBlur stdDeviation="2" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow_2218_33"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect1_dropShadow_2218_33"
-                  result="shape"
-                />
-              </filter>
-            </defs>
           </svg>
           Dark Mode
           <Switch
@@ -265,43 +228,6 @@ function SideBar({ variant, darkMode, setDarkMode }: BarProps) {
                 fill="#78828A"
               />
             </g>
-            <defs>
-              <filter
-                id="filter0_d_2218_90"
-                x="0.25"
-                y="1.81219"
-                width="29.52"
-                height="28.3818"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feOffset dy="4" />
-                <feGaussianBlur stdDeviation="2" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow_2218_90"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect1_dropShadow_2218_90"
-                  result="shape"
-                />
-              </filter>
-            </defs>
           </svg>
           Settings
         </li>
